@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcc.provider.dao.AccountServiceDao">
+
+	<update id="increaseAmount" parameterType="com.tcc.api.entity.AccountOne">
+				update tb_account_one set frozen = frozen + #{amount} where acct_id = #{acctId}
+	</update>
+
+	<update id="increaseAmountCancel" parameterType="com.tcc.api.entity.AccountOne">
+		update tb_account_one set frozen = frozen - #{amount} where acct_id = #{acctId}
+	</update>
+
+	<update id="increaseAmountConfirm" parameterType="com.tcc.api.entity.AccountOne">
+			update tb_account_one set amount = amount + #{amount}, frozen = frozen - #{amount} where acct_id = #{acctId}
+	</update>
+
+	<update id="decreaseAmount" parameterType="com.tcc.api.entity.AccountOne">
+		update tb_account_one set amount = amount - #{amount}, frozen = frozen + #{amount} where acct_id = #{acctId}
+	</update>
+
+	<update id="decreaseAmountCancel" parameterType="com.tcc.api.entity.AccountOne">
+
+	</update>
+
+	<update id="decreaseAmountConfirm" parameterType="com.tcc.api.entity.AccountOne">
+		update tb_account_one set frozen = frozen - #{amount} where acct_id = #{acctId}
+	</update>
+	
+
+
+</mapper>
