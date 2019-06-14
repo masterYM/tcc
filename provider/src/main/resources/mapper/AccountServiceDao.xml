@@ -20,7 +20,7 @@
 	</update>
 
 	<update id="decreaseAmountCancel" parameterType="com.tcc.api.entity.AccountOne">
-
+			update tb_account_one set amount = amount + #{amount},frozen = frozen - #{amount} where acct_id = #{acctId}
 	</update>
 
 	<update id="decreaseAmountConfirm" parameterType="com.tcc.api.entity.AccountOne">

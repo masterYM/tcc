@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/api/api.iml" filepath="$PROJECT_DIR$/api/api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/consumer/consumer.iml" filepath="$PROJECT_DIR$/consumer/consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/provider/provider.iml" filepath="$PROJECT_DIR$/provider/provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tulingvip03-ms-consumer-feign-without-hystrix-8001/tulingvip03-ms-consumer-feign-without-hystrix-8001.iml" filepath="$PROJECT_DIR$/tulingvip03-ms-consumer-feign-without-hystrix-8001/tulingvip03-ms-consumer-feign-without-hystrix-8001.iml" />
     </modules>
   </component>
 </project>

@@ -7,6 +7,7 @@ import com.tcc.provider.dao.AccountServiceDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Service("accountServiceConfirm")
 public class AccountServiceConfirm implements IAccountService {
@@ -15,20 +16,18 @@ public class AccountServiceConfirm implements IAccountService {
 	private AccountServiceDao accountServiceDao;
 
 	@Transactional(rollbackFor = ServiceException.class)
-	public void increaseAmount(AccountOne accountOne) throws ServiceException {
-//		this.jdbcTemplate.update("update tb_account_one set amount = amount + ?, frozen = frozen - ? where acct_id = ?", amount,
-//				amount, acctId);
+	public void increaseAmount(@RequestBody AccountOne accountOne) throws ServiceException {
+
 
 		accountServiceDao.increaseAmountConfirm(accountOne);
 		System.out.printf("done increase: acct= %s, amount= %7.2f%n", accountOne.getAcctId(), accountOne.getAmount());
 	}
 
 	@Transactional(rollbackFor = ServiceException.class)
-	public void decreaseAmount(AccountOne accountOne) throws ServiceException {
-//		this.jdbcTemplate.update("update tb_account_one set frozen = frozen - ? where acct_id = ?", amount, acctId);
+	public void decreaseAmount(@RequestBody AccountOne accountOne) throws ServiceException {
 
-		accountServiceDao.decreaseAmountConfirm(accountOne);
-		System.out.printf("done decrease: acct= %s, amount= %7.2f%n", accountOne.getAcctId(), accountOne.getAmount());
+		int a = accountServiceDao.decreaseAmountConfirm(accountOne);
+		System.out.printf("accountServiceConfirm:"+a+" ==>done decrease: acct= %s, amount= %7.2f%n", accountOne.getAcctId(), accountOne.getAmount());
 	}
 
 }

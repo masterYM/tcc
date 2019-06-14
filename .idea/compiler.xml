@@ -7,17 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api" />
-        <module name="consumer" />
         <module name="eureka" />
         <module name="provider" />
+        <module name="tulingvip03-ms-consumer-feign-without-hystrix-8001" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="api" target="1.5" />
+      <module name="api" target="1.8" />
+      <module name="c-consumer" target="1.8" />
       <module name="consumer" target="1.8" />
       <module name="eureka" target="1.8" />
       <module name="provider" target="1.8" />
       <module name="service-api" target="1.8" />
+      <module name="tulingvip03-ms-consumer-feign-without-hystrix-8001" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
